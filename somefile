@@ -7,3 +7,4 @@ resource "azurerm_data_factory_linked_service_cosmosdb" "example" {
 
 }
   connection_string = "AccountEndpoint=${module.cosmosdb[0].endpoint};AccountKey=${module.cosmosdb[0].key};"
+LS_AzureCosmosDB_properties_typeProperties_ConnectionString

@@ -6,3 +6,4 @@ resource "azurerm_data_factory_linked_service_cosmosdb" "example" {
   database         = "foo"
 
 }
+  connection_string = "AccountEndpoint=${module.cosmosdb[0].endpoint};AccountKey=${module.cosmosdb[0].key};"

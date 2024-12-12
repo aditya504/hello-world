@@ -59,9 +59,9 @@ variable "prod_resource_group_name" {
 
 }
 
-# Output the Cosmos DB connection string based on the environment
 output "cosmos_db_connection_string" {
-  value = var.environment == "prod" ?
-    data.azurerm_cosmosdb_account.prod.connection_strings[0] :
-    data.azurerm_cosmosdb_account.non_prod.connection_strings[0]
+  value = contains(["Dev", "Tst", "Uat"], var.environment) ? 
+    "${data.azurerm_cosmosdb_account.non_prod.connection_strings[0]};Database=payit-db" :
+    "${data.azurerm_cosmosdb_account.prod.connection_strings[0]};Database=payit-db"
 }
+

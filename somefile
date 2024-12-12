@@ -21,6 +21,35 @@ data "azurerm_cosmosdb_account" "prod" {
   resource_group_name = var.prod_resource_group_name
 }
 
+
+variable "non_prod_cosmos_db_account_name" {
+  type        = string
+  description = "Non-Prod Cosmos DB account name"
+  default = "cosmosdb-dev-acount-pckcpspsnd"
+
+}
+
+variable "non_prod_resource_group_name" {
+  type        = string
+  description = "Non-Prod Cosmos DB resource group name"
+  default = "non-prod-rg1"
+
+}
+
+variable "prod_cosmos_db_account_name" {
+  type        = string
+  description = "Prod Cosmos DB account name"
+  default = "prod-account-name-oasoioajlksdj"
+
+}
+
+variable "prod_resource_group_name" {
+  type        = string
+  description = "Prod Cosmos DB resource group name"
+  default = "prod-rg-1"
+
+}
+
 # Output the Cosmos DB connection string based on the environment
 output "cosmos_db_connection_string" {
   value = var.environment == "prod" ?

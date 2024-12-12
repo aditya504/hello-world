@@ -8,3 +8,22 @@ resource "azurerm_data_factory_linked_service_cosmosdb" "example" {
 }
   connection_string = "AccountEndpoint=${module.cosmosdb[0].endpoint};AccountKey=${module.cosmosdb[0].key};"
 LS_AzureCosmosDB_properties_typeProperties_ConnectionString
+
+# Data block for Non-Prod Cosmos DB
+data "azurerm_cosmosdb_account" "non_prod" {
+  name                = var.non_prod_cosmos_db_account_name
+  resource_group_name = var.non_prod_resource_group_name
+}
+
+# Data block for Prod Cosmos DB
+data "azurerm_cosmosdb_account" "prod" {
+  name                = var.prod_cosmos_db_account_name
+  resource_group_name = var.prod_resource_group_name
+}
+
+# Output the Cosmos DB connection string based on the environment
+output "cosmos_db_connection_string" {
+  value = var.environment == "prod" ?
+    data.azurerm_cosmosdb_account.prod.connection_strings[0] :
+    data.azurerm_cosmosdb_account.non_prod.connection_strings[0]
+}

@@ -99,3 +99,10 @@ parameters:
       - "non-prod"
       - "prod"
 
+
+
+  validation {
+    condition     = contains(["Dev", "Tst", "Uat", "Prod"], var.environment)
+    error_message = "Environment must be one of: Dev, Tst, Uat, or Prod"
+  }
+

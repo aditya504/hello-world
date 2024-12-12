@@ -25,6 +25,17 @@ data "azurerm_cosmosdb_account" "prod" {
 parameters:
   - name: environment
     type: string
+    default: "Dev"  # Default environment
+    values:         # Added environment selection
+      - "Dev"
+      - "Tst"
+      - "Uat"
+      - "Prod"
+
+
+parameters:
+  - name: environment
+    type: string
     default: "non-prod"
     values:
       - "non-prod"

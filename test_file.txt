@@ -8,3 +8,12 @@ I had power issue at my home, so I had to connect through my mobile. The network
 regarding the connection issue task, I don't have access to datafactory to check the connection while I make some changes in the pipeline.
 
 The connection variables are fine, I've done the variablizing changes to the pipeline, suggested by dinesh, and also I've some other changes too. It didn't worked out well. I need to connect with dinesh and Manikandan to work on this issue further and to get access to datafactory for testing it. 
+
+
+
+Yesterday, I'm on the KTLO2 production backend and frondend deployment KT from raj most of the time.
+Regarding the cosmosdb connection issue, we've tried in many possible ways but we're not sure why the connection is failing. We need to take Venkatesh help for this. I've contacted him, he told he'll connect with whenever he's free. I'll connect with him for guidance and I'll work on that.
+Currently, I have no access to check the datafactory, I raised SR, but there's no response on that since then, I pinged Sudhakar on that but there's no response.
+
+
+Regarding the FDLoad issue, I tried to trace about the authentication env variables, I don't fully understand the code actually. I need manoj help to fully understand about the issue and work on that. I already pinged manoj, waiting for his response to connect with him discussing on this issue for resolution.

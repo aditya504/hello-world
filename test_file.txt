@@ -1,6 +1,4 @@
 
-      "connectionString": "@{if(or(equals(pipeline().parameters.stages, 'dev'), equals(pipeline().parameters.stages, 'test'), equals(pipeline().parameters.stages, 'uat')), 'AccountEndpoint=https://payit-weu-d-cdb-4maffoq6cdws0.documents.azure.com:443/;Database=natwest-payit;', 'AccountEndpoint=https://payit-weu-p-cdb-xxxxxxxxxxx.documents.azure.com:443/;Database=natwest-payit;')}"
-
 Hi team, 
 
 I had power issue at my home, so I had to connect through my mobile. The network is bad here. 
